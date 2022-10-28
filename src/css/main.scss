@@ -1,0 +1,16 @@
+//Fixed
+@import 'settings/variables';
+@import 'tools/mixin';
+//Elements primary
+@import 'elements/reset';
+@import 'elements/global';
+//Common
+@import 'common/image';
+//Components
+@import 'component/sample.scss';
+@import 'component/simulator';
+//Trumps
+@import 'trumps/helper';
+@import 'trumps/mwform';
+@import 'trumps/pagenavi';
+//@import 'trumps/welcart';

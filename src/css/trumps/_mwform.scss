@@ -1,0 +1,120 @@
+.mwform-radio-field {
+  position: relative;
+  margin-left: 30px;
+  font-size: 16px;
+  @include sp {
+    margin-left: 0;
+    font-size: getsp(32.57px);
+
+    &:not(:first-child) {
+      margin-left: getsp(115px);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  span {
+    position: relative;
+    padding-left: 35px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      border: 2px solid $primary;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      display: none;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      background: #c9c32b;
+      transform: translateY(-50%);
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    &:checked + span {
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+.mwform-checkbox-field {
+  font-size: 16px;
+  position: relative;
+  @include sp {
+    font-size: getsp(28px);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  span {
+    position: relative;
+    padding-left: 35px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      border: 1px solid $primary;
+      width: 20px;
+      height: 20px;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 45%;
+      left: 1px;
+      display: none;
+      border-radius: 50%;
+      width: 27px;
+      height: 17px;
+      background: $primary;
+      transform: translateY(-50%);
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    &:checked + span {
+      &::after {
+        display: block;
+      }
+    }
+  }
+}

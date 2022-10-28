@@ -1,0 +1,17 @@
+html {
+  font-family: $font-yugo;
+  color: $primary;
+  font-size: 10px;
+  font-feature-settings: 'palt';
+  @include sp {
+    min-width: 100%;
+  }
+}
+
+a {
+  transition: 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

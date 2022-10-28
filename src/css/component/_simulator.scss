@@ -1,0 +1,88 @@
+.simulator {
+  @include max-width;
+
+  &__container {
+    padding: 20px 30px;
+  }
+
+  &__item {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    select,
+    input {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: $font-medium;
+    }
+
+    select {
+      width: 250px;
+    }
+    
+    input {
+      width: 150px;
+      text-align: right;
+    }
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  &__multiselect {
+    width: 250px;
+
+    select {
+      width: 100%;
+    }
+  }
+
+  &__label {
+    font-size: 18px;
+    font-weight: $font-bold;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    span {
+      font-size: 14px;
+      margin-left: 20px;
+    }
+  }
+
+  &__options {
+    font-size: 14px;
+  }
+  
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+
+    h3 {
+      font-size: 30px;
+      width: 100%;
+    }
+    
+    h4 {
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+  
+  &__total-text {
+    font-size: 30px;
+    text-align: right;
+    width: 100%;
+  }
+}

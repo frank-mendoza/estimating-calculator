@@ -1,0 +1,20 @@
+.welcart {
+  &__error-none {
+    margin: 30px 0;
+    font-size: 16px;
+    font-family: $font-yugo;
+  }
+
+  &__hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+  }
+}
+
+.error_message {
+  margin: 20px 0;
+  font-size: 16px;
+  font-family: $font-yugo;
+  color: $primary;
+}

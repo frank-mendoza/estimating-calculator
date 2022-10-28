@@ -1,0 +1,47 @@
+.white {
+  color: $white;
+}
+
+.white-bg {
+  background: $white;
+}
+
+.black {
+  color: $black;
+}
+
+.black-bg {
+  background: $black;
+}
+
+.sp {
+  display: none;
+  @include sp {
+    display: block;
+  }
+}
+
+.pc {
+  display: block;
+  @include sp {
+    display: none;
+  }
+}
+
+.sp-flex {
+  display: none;
+  @include sp {
+    display: flex;
+  }
+}
+
+.pc-flex {
+  display: flex;
+  @include sp {
+    display: none;
+  }
+}
+
+.none {
+  display: none;
+}

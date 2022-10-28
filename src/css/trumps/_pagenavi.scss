@@ -1,0 +1,91 @@
+.wp-pagenavi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .first,
+  .extend,
+  .last {
+    display: none;
+  }
+
+  .page,
+  .current {
+    margin: 0 5px;
+    border: 1px solid $black;
+    padding: 7px 10px;
+    font-size: 16px;
+    @include sp {
+      margin: 0 getsp(11px);
+      border: getsp(4px) solid $black;
+      padding: getsp(12.5px) getsp(18px);
+      font-size: getsp(32px);
+      font-family: $font-yugo;
+      font-weight: $font-medium;
+    }
+  }
+
+  .current {
+    background: $black;
+    color: $white;
+  }
+
+  .previouspostslink,
+  .nextpostslink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $black;
+    margin: 0 5px;
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+    @include sp {
+      border: getsp(4px) solid $black;
+      margin: 0 getsp(11px);
+      width: getsp(148px);
+      height: getsp(80px);
+      font-size: getsp(32px);
+      font-family: $font-yugo;
+      font-weight: $font-medium;
+    }
+  }
+
+  .previouspostslink {
+    position: relative;
+
+    &::before {
+      content: '';
+      margin-right: 10px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 8px 4px 0;
+      border-color: transparent $black transparent transparent;
+      @include sp {
+        border-width: getsp(9px) getsp(18px) getsp(9px) 0;
+        margin-right: getsp(11px);
+      }
+    }
+  }
+
+  .nextpostslink {
+    position: relative;
+
+    &::after {
+      content: '';
+      margin-left: 10px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 8px;
+      border-color: transparent transparent transparent $black;
+      @include sp {
+        border-width: getsp(9px) 0 getsp(9px) getsp(18px);
+        margin-left: getsp(11px);
+      }
+    }
+  }
+}
