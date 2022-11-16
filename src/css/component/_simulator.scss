@@ -1,66 +1,314 @@
 .simulator {
-  @include max-width;
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  @include sp {
+    max-width: 100%;
+    padding: 0 3%;
+  }
+
+  &__banner {
+    width: 100%;
+    height: 216px;
+    margin-bottom: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__item-wrapper {
+    padding: 30px 0;
+    position: relative;
+
+    &.noborder {
+      padding-bottom: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: url('/img/border-img.png') center no-repeat;
+      background-size: cover;
+    }
+  }  
+
+  &__note {
+    font-size: 20px;
+    font-family: $font-noto;
+    color: $red;
+    text-align: center;
+
+    &--input {
+    text-align: left;
+    margin: 30px 0 0 60px;
+    color: $text;
+
+      span {
+        &.red {
+          padding: 5px 15px;
+          color: $white;
+          margin-right: 20px;
+          background-color: #9F0D0C;
+        }
+
+        &.lightred {
+          color: $red;
+        }
+      }
+    }
+
+    &--small {
+      font-size: 16px;
+      font-weight: $font-regular;
+      color: $black-33;
+      text-align: left;
+      line-height: 20px;
+    }
+  }
+
+  &__advisory-note {
+    color: $white;
+    padding: 5px 15px;
+    background-color: $red;
+    font-size: 21px;
+    font-weight: $font-medium;
+    margin-left: 24px;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+  
+  &__title {
+    font-weight: $font-bold;
+    text-align: center;
+    font-size: 36px;
+    color: $black;
+  }
 
   &__container {
-    padding: 20px 30px;
+    padding: 50px 0 40px;
+
+    &--bordered {
+      border: 4px solid $gray;
+      border-left: 0;
+      border-right: 0;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
   }
 
   &__item {
-    margin: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &.mt0 {
+      margin-top: 0;
+    }
   }
 
   &__input-wrapper {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    gap: 35px;
+  
+    &.flexend {
+      justify-content: flex-end;
 
-    select,
-    input {
-      padding: 10px;
-      font-size: 16px;
-      font-weight: $font-medium;
+      span {
+
+        &.details {
+          font-size: 19px;
+          justify-self: end;
+        }
+      }
+    }
+  }
+  
+  &__select {
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: $font-medium;
+    width: 330px;
+    border: 1px solid #626262;
+    outline: none;
+    border-radius: 5px;
+    height: 44px;
+    background-color: $white;
+
+    &--sm {
+      width: 80px;
     }
 
-    select {
-      width: 250px;
-    }
-    
-    input {
-      width: 150px;
-      text-align: right;
-    }
-
-    span {
-      font-size: 16px;
+    &.dnone {
+      display: none;
     }
   }
 
-  &__multiselect {
-    width: 250px;
+  &__select-label {
+    font-size: 20px;
+    font-weight: $font-medium;
+    color: $text;
+  }
 
-    select {
-      width: 100%;
+  &__input-default {
+    width: 150px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    text-align: right;
+    font: $font-regular 28px $font-oswald;
+
+    &.tax{
+      display: none;
+
+      &.active {
+        display: block;
+      }
     }
+
+  }
+
+  &__select-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  &__input-column {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input-item  {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 30px;
+
+    &--flexend {
+      justify-content: flex-end;
+    }
+
+    &.flex {
+      flex-direction: column;
+    }
+  }
+
+  &__radio-wrap {
+    user-select: none;
+    position: relative;
+    font-size: 19px;
+    font-weight: $font-medium;
+    color: $text;
+    padding-left: 45px;
+  }
+
+  &__radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__custom-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: 3px solid #48637B;
+    background-color: transparent;
+    border-radius: 50%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 4px;
+      left: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #48637B;
+    }
+  }
+
+  &__radio-wrap &__radio:checked ~ &__custom-radio::after {
+    display: block;
+  }
+
+  &__details-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    &.flexend {
+      justify-content: flex-end;
+    }
+  }
+
+  &__discount-img {
+    width: 158px;
+    position: absolute;
+    top: 90%;
+    right: -2px;
+    height: 50px;
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  &__details {
+    font-size: 19px;
+    font-weight: $font-medium;
+    color: $text;
   }
 
   &__label {
-    font-size: 18px;
+    color: $blue;
+    font-size: 24px;
     font-weight: $font-bold;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+    min-width: 360px;
+    margin-left: 20px;
 
     span {
-      font-size: 14px;
-      margin-left: 20px;
+      &.number {
+        color: $text;
+        margin-right: 10px;
+      }
     }
   }
 
   &__options {
-    font-size: 14px;
+    font-size: 24px;
+    font-weight: $font-bold;
+    color: $text;
   }
   
   &__total {
@@ -79,10 +327,166 @@
       width: 100%;
     }
   }
+
+  &__total-wrapper {
+    margin-top: 85px;
+    padding: 65px 40px;
+    background-color: #F1F1F1;
+    position: relative;
+  }
+
+  &__total-container {
+    background-color: $white;
+    padding: 10px;
+  }
   
   &__total-text {
     font-size: 30px;
     text-align: right;
     width: 100%;
+  }
+
+  &__banner-total {
+    width: 100%;
+    height: 152px;
+    position: relative;
+    background: url('/img/simulator-total-banner.png') center no-repeat;
+    background-size: cover;
+    @include center;
+
+    p {
+      position: absolute;
+      bottom: 10px;
+      right: 65px;
+      font-size: 20px;
+      font-weight: $font-medium;
+      color: $black;
+    }
+  }
+
+  &__carret {
+    position: absolute;
+    top: -35px;
+    z-index: 5;
+    left: 41%;
+  }
+
+  &__summary-wrapper {
+    margin: 40px 55px;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__table-title {
+    font-size: 26px;
+    font-weight: $font-medium;
+    color: $black;
+    text-align: right;
+    padding: 20px 0;
+    background-color: #EEEEEE;
+
+    // &.w490 {
+    //   width: 460px;
+    // }
+
+    // &.w155 {
+    //   width: 155px;
+    // }
+    
+    // &.w320 {
+    //   width: 320px;
+    // }
+    
+    &:first-child {
+      padding-left: 28px;
+      text-align: left;
+    }
+
+    &:last-child {
+      padding-right: 28px;
+    }
+  }
+
+  &__table-td {
+    font: $font-medium 24px $font-oswald;
+    color: $black;
+    text-align: right;
+    padding: 20px 0;
+    position: relative;
+
+    &:first-child {
+      padding-left: 28px;
+      text-align: left;
+    }
+
+    &:last-child {
+      padding-right: 28px;
+    }
+
+    &.noborder {
+      border-bottom: 4px solid $gray;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &.right {
+      text-align: right;
+      font-size: 30px;
+      font-family: $font-noto;
+    }
+
+    &.red {
+      color: $red;
+    }
+
+    span {
+      &.noto {
+        font-size: 22px;
+        font-family: $font-noto;
+        margin-left: 5px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: url('/img/border-img.png') center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__total-expense {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 28px;
+    justify-content: flex-end;
+    gap: 336px;
+
+    span {
+      font-size: 40px;
+      font-weight: $font-medium;
+      color: $black-33;
+    }
+
+    p {
+      font: $font-regular 50px $font-oswald;
+      color: $black-33;
+
+      span {
+        font: $font-medium 22px $font-noto;
+        color: $text;
+        margin-left: 5px;
+      }
+    }
   }
 }

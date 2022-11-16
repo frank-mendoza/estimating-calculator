@@ -1,164 +1,398 @@
 extends includes/layout.pug
 block content
   .simulator
-    .simulator__container   
-      .simulator__item 
-        label.simulator__label(for="定款作成方法") 1. 定款作成方法
-        .simulator__input-wrapper 
-          select.js-select(name="定款作成方法") 
-            option Please select
-            option(value=0) 電子
-            option(value=40000) 紙
-          input.js-input-simulator(type="text" value=0 name='定款作成方法') 
-      .simulator__item 
-        label.simulator__label(for="設⽴までの希望⽇数") 2. 設⽴までの希望⽇数
-        .simulator__input-wrapper 
-          select.js-select(name="設⽴までの希望⽇数") 
-            option Please select
-            option(value=0) 通常対応
-            option(value=10000) 10営業日以内
-            option(value=20000) 5営業日以内
-          input.js-input-simulator(type="text" value=0 name='設⽴までの希望⽇数') 
-      .simulator__item 
-        label.simulator__label(for="電⼦定款作成代⾏⼀式") 3. 電⼦定款作成代⾏⼀式
-        .simulator__input-wrapper 
-          select.js-select-discount(name="電⼦定款作成代⾏⼀式") 
-           option Please select
-            option(value=10000) 専門家報酬 (特別割引)
-          input.js-input-discount(type="text" value=0 name='電⼦定款作成代⾏⼀式') 
-      .simulator__item 
-        label.simulator__label(for="法人形態") 4. 法⼈形態
-        .simulator__input-wrapper 
-          select.js-select(name="法人形態") 
-            option Please select
-            option(value=150000) 株式会社
-            option(value=60000) 合同会社
-          input.js-input-simulator(type="text" value=0 name='法人形態') 
-      .simulator__item 
-        label.simulator__label(for="資本⾦") 5. 資本⾦
-        .simulator__input-wrapper 
-          select.js-select(name="資本⾦") 
-            option Please select
-            option(value=32000) 100万未満
-            option(value=42000) 100万円以上300万円未満
-            option(value=52000) 300万円以上
-          input.js-input-simulator(type="text" value=0 name='資本⾦') 
-      .simulator__item 
-        label.simulator__label(for="現物出資") 6. 現物出資
-        .simulator__input-wrapper 
-          select.js-select(name="現物出資") 
-            option Please select
-            option(value=0) なし
-            option(value=10000) 資本金500万円未満
-            option(value=30000) 資本金500万円以上
-          input.js-input-simulator(type="text" value=0 name='現物出資') 
-      .simulator__item 
-        label.simulator__label(for="株主・発起⼈") 7. 株主・発起⼈
-        .simulator__input-wrapper 
-          select.js-select(name="株主・発起⼈") 
-            option Please select
-            option(value=0) 個人のみ
-            option(value=5000) 日本法人
-            option(value=50000) 海外法人
-          input.js-input-simulator(type="text" value=0 name='株主・発起⼈') 
-      .simulator__item 
-        label.simulator__label(for="出資者") 8. 出資者
-        .simulator__input-wrapper 
-          select.js-select(name="出資者") 
-            option Please select
-            option(value=0) 2名以下
-            option(value=10000) 2名以下（海外在住者含む）
-            option(value=10000) 3名以上は1人につき
-          input.js-input-simulator(type="text" value=0 name='出資者') 
-      .simulator__item 
-        label.simulator__label(for="役員⼈数") 9. 役員⼈数
-        .simulator__input-wrapper 
-          select.js-select(name="役員⼈数") 
-            option Please select
-            option(value=0) 2名以下
-            option(value=10000) 2名以下（海外在住者含む）
-            option(value=10000) 3名以上は1人につき
-          input.js-input-simulator(type="text" value=0 name='役員⼈数') 
-      .simulator__item 
-        label.simulator__label(for="設⽴後の税務顧問契約") 10. 設⽴後の税務顧問契約
-        .simulator__input-wrapper 
-          select.js-select(name="設⽴後の税務顧問契約") 
-            option Please select
-            option(value) 依頼する
-            option(value=0) 依頼しない
-          input.js-input-simulator(type="text" value=0 name='設⽴後の税務顧問契約') 
-      .simulator__item 
-        label.simulator__label(for="設⽴後の税務署等への届出") 11. 設⽴後の税務署等への届出
-        .simulator__input-wrapper 
-          select.js-select-discount(name="設⽴後の税務署等への届出") 
-            option Please select
-            option(value=0) 自分で対応
-            option(value=20000) 依頼 (特別割引)
-          input.js-input-discount(type="text" value=0 name='設⽴後の税務署等への届出') 
-      .simulator__item 
-        label.simulator__label(for="定款の必要部数") 12. 定款の必要部数
-          span ⼝座開設と事務所を借りる際に必要のため、2枚以上を推奨しております。
-        .simulator__input-wrapper
-          .simulator__multiselect 
-            select(name="定款の必要部数") 
-              option Please select
-              option 1枚につき
-            select.js-select(name="定款の必要部数") 
-              option(value=500) 1
-              option(value=1000) 2
-              option(value=1500) 3
-              option(value=2000) 4
-              option(value=2500) 5
-              option(value=3000) 6
-              option(value=3500) 7
-              option(value=4000) 8
-              option(value=4500) 9
-              option(value=5000) 10
-          input.js-input-simulator(type="text" value=0 name='定款の必要部数') 
-      .simulator__item 
-        label.simulator__label(for="謄本の必要部数") 13. 謄本の必要部数
-          span ※⼝座開設と事務所を借りる際に必要のため、2枚以上を推奨しております。
-        .simulator__input-wrapper
-          .simulator__multiselect  
-            select(name="謄本の必要部数") 
-              option Please select
-              option 1枚につき
-            select.js-select(name="謄本の必要部数") 
-              option(value=1000) 1
-              option(value=2000) 2
-              option(value=3000) 3
-              option(value=4000) 4
-              option(value=5000) 5
-              option(value=6000) 6
-              option(value=7000) 7
-              option(value=8000) 8
-              option(value=9000) 9
-              option(value=10000) 10
-          input.js-input-simulator(type="text" value=0 name='謄本の必要部数') 
-      .simulator__item 
-        label.simulator__label(for="印鑑") 14. 印鑑
-        .simulator__input-wrapper 
-          select.js-select(name="印鑑") 
-            option Please select
-            option(value=0) なし
-            option(value=6000) 3本セット
-          input.js-input-simulator(type="text" value=0 name='印鑑') 
-      span.simulator__options オプション
-      .simulator__item 
-        label.simulator__label 15. 社会保険の届出書⼀式
-        .simulator__input-wrapper 
-          span 別途ヒアリング後別途お⾒積り
+    .simulator__banner 
+      img(src="img/banner-simulator.png", alt="banner")
+    p.simulator__note 設立に関する各項目を変更することで費用が再計算されます。
+    .simulator__container
+      h2.simulator__title 定款作成について   
+    .simulator__container.simulator__container--bordered
+      .simulator__item-wrapper   
+        .simulator__item.mt0 
+          label.simulator__label(for="定款作成方法") 
+            span.number 1. 
+            span 定款作成方法
+          .simulator__input-wrapper
+            .simulator__input-item 
+              label.simulator__radio-wrap 電子
+                input.simulator__radio.js-radio(value=0 type="radio" name="定款作成方法") 
+                .simulator__custom-radio
+              label.simulator__radio-wrap 紙
+                input.simulator__radio.js-radio-2(value=40000 type="radio" name="定款作成方法") 
+                .simulator__custom-radio
+            .simulator__details-wrapper
+              span.simulator__details 印紙代
+              span.simulator__input-default.js-input-radio 0 円
+              //- input.simulator__input-default.js-input-radio(type="text" value=0 name='定款作成方法') 
+        p.simulator__note.simulator__note--input 
+          span.red 期間限定
+          span.lightred 定款作成システム利用料5,000円⇒0円
+      
+      .simulator__item-wrapper   
+        .simulator__item 
+          label.simulator__label(for="設⽴までの希望⽇数")
+            span.number 2. 
+            span 設⽴までの希望⽇数
+          .simulator__input-wrapper 
+            select.simulator__select.js-select(name="設⽴までの希望⽇数") 
+              option(value=0) 選んでください
+              option(value=0) 通常対応
+              option(value=10000) 10営業日以内
+              option(value=20000) 5営業日以内
+            .simulator__details-wrapper
+              span.simulator__details 司法書士手数料
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='設⽴までの希望⽇数' ) 
+              span.simulator__input-default.js-select-simulator 0 円
+        p.simulator__note.simulator__note--input ※通常は1週間以内で対応可能です
+      
+      .simulator__item-wrapper.noborder     
+        .simulator__item 
+          label.simulator__label(for="電⼦定款作成代⾏⼀式")
+            span.number 3. 
+            span 電⼦定款作成代⾏⼀式
+          .simulator__input-wrapper.flexend 
+            .simulator__details-wrapper
+              span.simulator__details 専門家報酬
+              span.simulator__input-default.js-input-discount 10000 円
+              img.simulator__discount-img.show(src="img/discount.png", alt="discount")
+      
+    .simulator__container
+      h2.simulator__title 設立内容について  
+    .simulator__container.simulator__container--bordered
+      .simulator__item-wrapper  
+        .simulator__item.mt0 
+          label.simulator__label(for="法人形態") 
+            span.number 4.
+            span 法⼈形態
+          .simulator__input-wrapper 
+            .simulator__input-item 
+              label.simulator__radio-wrap 株式会社
+                input.simulator__radio.js-radio(value=150000 type="radio" name="法⼈形態") 
+                .simulator__custom-radio
+              label.simulator__radio-wrap 合同会社
+                input.simulator__radio.js-radio-2(value=60000 type="radio" name="法⼈形態") 
+                .simulator__custom-radio
+            .simulator__details-wrapper
+              span.simulator__details 登録免許税  
+              span.simulator__input-default.js-input-radio.js-table-4 0 円
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='法人形態') 
+      .simulator__item-wrapper    
+        .simulator__item 
+          label.simulator__label(for="資本⾦")
+            span.number 5.
+            span 資本⾦
+          .simulator__input-wrapper 
+            select.simulator__select.js-select(name="資本⾦") 
+              option 選んでください
+              option(value=32000) 100万未満
+              option(value=42000) 100万円以上300万円未満
+              option(value=52000) 300万円以上
+            .simulator__details-wrapper
+              span.simulator__details 定款認証手数料 
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='資本⾦') 
+              span.simulator__input-default.js-select-simulator.js-articles-fee 0 円
+      .simulator__item-wrapper    
+        .simulator__item 
+          label.simulator__label(for="現物出資")
+            span.number 6.
+            span 現物出資
+          .simulator__input-wrapper 
+            select.simulator__select.js-select(name="現物出資") 
+              option 選んでください
+              option(value=0) なし
+              option(value=10000) 資本金500万円未満
+              option(value=30000) 資本金500万円以上
+            .simulator__details-wrapper
+              span.simulator__details 司法書士報酬 
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='現物出資') 
+              span.simulator__input-default.js-select-simulator 0 円
+      .simulator__item-wrapper    
+        .simulator__item 
+          label.simulator__label(for="株主・発起⼈")
+            span.number 7.
+            span 株主・発起⼈
+          .simulator__input-wrapper 
+            select.simulator__select.js-select(name="株主・発起⼈") 
+              option 選んでください
+              option(value=0) 個人のみ
+              option(value=5000) 日本法人
+              option(value=50000) 海外法人
+            .simulator__details-wrapper
+              span.simulator__details 司法書士報酬 
+              span.simulator__input-default.js-select-simulator 0 円
+              //- span.simulator__input-default.js-select-simulator(type="text" value=0 name='株主・発起⼈') 
+      .simulator__item-wrapper    
+        .simulator__item 
+          label.simulator__label(for="出資者")
+            span.number 8.
+            span 出資者
+          .simulator__input-wrapper 
+            .simulator__input-item
+              .simulator__input-item.flex
+                .simulator__input-column 
+                  label.simulator__radio-wrap 海外在住者なし
+                    input.simulator__radio.js-radio-nooverseas(value=false type="radio"  id=0 name="出資者") 
+                    .simulator__custom-radio
+                  label.simulator__radio-wrap 海外在住者含む
+                    input.simulator__radio.js-radio-overseas(value=false type="radio" id=1 name="出資者") 
+                    .simulator__custom-radio
+                .simulator__select-wrap 
+                  label.simulator__select-label 人数 
+                  select.simulator__select.simulator__select--sm.js-select-people-1(name='出資者')
+                    option(value=0) 1
+                    option(value=0) 2
+                    option(value=10000) 3
+                    option(value=20000) 4
+                    option(value=30000) 5
+                    option(value=40000) 6
+                    option(value=50000) 7
+                    option(value=60000) 8
+                    option(value=70000) 9
+                    option(value=80000) 10
+            .simulator__details-wrapper
+              span.simulator__details 司法書士報酬 
+              span.simulator__input-default.js-oversea-radio 0 円
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='出資者') 
+      .simulator__item-wrapper.noborder     
+        .simulator__item
+          label.simulator__label(for="役員⼈数")
+            span.number 9.
+            span 役員⼈数
+          .simulator__input-wrapper
+            .simulator__input-item
+              .simulator__input-item.flex
+                .simulator__input-column  
+                  label.simulator__radio-wrap 海外在住者なし
+                    input.simulator__radio.js-radio-nooverseas(value=false id=0 type="radio" name="役員⼈数") 
+                    .simulator__custom-radio
+                  label.simulator__radio-wrap 海外在住者含む
+                    input.simulator__radio.js-radio-overseas(value=false id=1 type="radio" name="役員⼈数") 
+                    .simulator__custom-radio  
+                .simulator__select-wrap 
+                  label.simulator__select-label 人数
+                  select.simulator__select.simulator__select--sm.js-select-people-2(name='役員⼈数')
+                    option(value=0) 1
+                    option(value=0) 2
+                    option(value=10000) 3
+                    option(value=20000) 4
+                    option(value=30000) 5
+                    option(value=40000) 6
+                    option(value=50000) 7
+                    option(value=60000) 8
+                    option(value=70000) 9
+                    option(value=80000) 10
+            .simulator__details-wrapper
+              span.simulator__details 司法書士報酬 
+              span.simulator__input-default.js-oversea-radio.js-oversea-radio-2 0 円
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='役員⼈数') 
+  
 
-      //- button.simulator__button.js-simulator-button Calculate
+    .simulator__container
+      h2.simulator__title 税務・顧問契約について     
+    .simulator__container.simulator__container--bordered
+      .simulator__item-wrapper
+        .simulator__item 
+          label.simulator__label(for="設⽴後の税務顧問契約")
+            span.number 10.
+            span 設⽴後の税務顧問契約
+          .simulator__input-wrapper 
+            .simulator__input-item 
+              label.simulator__radio-wrap 依頼する
+                input.simulator__radio.js-radio(value=false type="radio" name="設⽴後の税務顧問契約") 
+                .simulator__custom-radio
+              label.simulator__radio-wrap 依頼しない
+                input.simulator__radio.js-radio-2.js-radio-toggle(value=0 type="radio" name="設⽴後の税務顧問契約") 
+                .simulator__custom-radio  
+            .simulator__details-wrapper
+              span.simulator__details 専門家報酬 
+              span.simulator__input-default.js-tax.js-input-radio 0 円
+              span.simulator__advisory-note.js-advisory 税務顧問契約
+      .simulator__item-wrapper.noborder 
+        .simulator__item 
+          label.simulator__label(for="設⽴後の税務署等への届出")
+            span.number 11.
+            span 設⽴後の税務署等への届出
+          .simulator__input-wrapper 
+            .simulator__input-item 
+              label.simulator__radio-wrap 自分で対応
+                input.simulator__radio.js-show-discount.js-radio( value=20000 type="radio" name="設⽴後の税務署等への届出") 
+                .simulator__custom-radio
+              label.simulator__radio-wrap 依頼する
+                input.simulator__radio.js-show-discount-2.js-radio-2(value=0 type="radio" name="設⽴後の税務署等への届出") 
+                .simulator__custom-radio   
+            .simulator__details-wrapper
+              span.simulator__details 税理士報酬 
+              //- input.simulator__input-default.js-input-discount.js-input-radio(type="text" value=0 name='設⽴後の税務署等への届出') 
+              span.simulator__input-default.js-input-radio.js-input-discount 0 円
+              img.simulator__discount-img.js-img-show(src="img/discount.png", alt="discount")
+    .simulator__container
+      h2.simulator__title その他必要な内容について     
+    .simulator__container.simulator__container--bordered
+      .simulator__item-wrapper
+        .simulator__item 
+          label.simulator__label(for="定款の必要部数")
+            span.number 12.
+            span 定款の必要部数
+          .simulator__input-wrapper
+            .simulator__input-item.simulator__input-item--flexend 
+              label.simulator__select-label 人数
+              select.simulator__select.simulator__select--sm.js-select(name="定款の必要部数") 
+                option(value=500) 1
+                option(value=1000) 2
+                option(value=1500) 3
+                option(value=2000) 4
+                option(value=2500) 5
+                option(value=3000) 6
+                option(value=3500) 7
+                option(value=4000) 8
+                option(value=4500) 9
+                option(value=5000) 10
+            .simulator__details-wrapper
+              span.simulator__details 発行手数料 
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='定款の必要部数') 
+              span.simulator__input-default.js-select-simulator.js-incstamp-fee 0 円
+        p.simulator__note.simulator__note--input 口座開設と事務所を借りる際に必要のため、2枚以上を推奨しております。
 
-      .simulator__total
-        h4 Total Amount
-        h2.simulator__total-text.js-total-expense 0
-      .simulator__total
-        h4 Total Discount
-        h2.simulator__total-text -
-          span.js-total-discount 0
+      .simulator__item-wrapper  
+        .simulator__item 
+          label.simulator__label(for="謄本の必要部数")
+            span.number 13.
+            span 謄本の必要部数
+          .simulator__input-wrapper
+            .simulator__input-item.simulator__input-item--flexend 
+              label.simulator__select-label 人数  
+              select.simulator__select.simulator__select--sm.js-select(name="謄本の必要部数") 
+                option(value=1000) 1
+                option(value=2000) 2
+                option(value=3000) 3
+                option(value=4000) 4
+                option(value=5000) 5
+                option(value=6000) 6
+                option(value=7000) 7
+                option(value=8000) 8
+                option(value=9000) 9
+                option(value=10000) 10
+            .simulator__details-wrapper
+              span.simulator__details 発行手数料 
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='謄本の必要部数') 
+              span.simulator__input-default.js-select-simulator.js-stamp-fee 0 円
+        p.simulator__note.simulator__note--input ※口座開設と事務所を借りる際に必要のため、2枚以上を推奨しております。
+      .simulator__item-wrapper  
+        .simulator__item 
+          label.simulator__label(for="印鑑")
+            span.number 14.
+            span 印鑑
+          .simulator__input-wrapper
+            .simulator__input-item 
+              label.simulator__radio-wrap なし
+                input.simulator__radio.js-radio( value=0 type="radio" name="印鑑") 
+                .simulator__custom-radio
+              label.simulator__radio-wrap 依頼 (特別割引)
+                input.simulator__radio.js-radio-2(value=6000 type="radio" name="印鑑") 
+                .simulator__custom-radio 
+            .simulator__details-wrapper
+              span.simulator__details 印鑑代 
+              //- input.simulator__input-default.js-select-simulator(type="text" value=0 name='印鑑') 
+              span.simulator__input-default.js-input-radio 0 円
+      .simulator__item-wrapper  
+        .simulator__item
+          span.simulator__options オプション 
+      .simulator__item-wrapper  
+        .simulator__item 
+          label.simulator__label
+            span.number 15.
+            span 社会保険の届出書⼀式
+          .simulator__input-wrapper.flexend 
+            span.details 別途ヒアリング後別途お⾒積り
+      .simulator__item-wrapper.noborder  
+        .simulator__note.simulator__note--small ※登録免許税は資本金の1,000分の7（15万円に満たないときは15万円）のため、約2,000万円を超える場合はご相談ください。
+          br 
+          | 《算出方法》
+          br 
+          | 株式会社：資本金額×0.7％ または 150,000円 のどちらか高い方
+          br 
+          | 合同会社：資本金額×0.7％ または 60,000円 のどちらか高い方
+          br 
+          | 合名会社・合資会社：申請件数×60,000円”
+          br 
+          | ※交通費実費
 
-      .simulator__total
-        h3 Total Expense 
-        h3.simulator__total-text.js-total-simulator 0
+      .simulator__total-wrapper
+        img.simulator__carret(src="img/simulator-carret.png", alt="arrow") 
+        .simulator__total-container 
+          .simulator__banner-total
+            .simulator__title 概算お見積もり
+            p 司法書士サン共同税理士法人
+          .simulator__summary-wrapper 
+            table.simulator__table 
+              tr 
+                th.simulator__table-title.w490 登記の種類   
+                th.simulator__table-title.w155 専門家報酬額   
+                th.simulator__table-title.w320 登録免許税等実費   
+              tr 
+                td.simulator__table-td 登録免許税（株式会社）
+                td.simulator__table-td 0 
+                  span.noto 円
+                td.simulator__table-td
+                  span.js-reg-table 0
+                  span.noto 円
+              tr 
+                td.simulator__table-td 定款認証手数料
+                td.simulator__table-td.js-total-pAmt 10,000 
+                  span.noto 円
+                td.simulator__table-td
+                  span.js-articles-table 0
+                  span.noto 円
+              tr 
+                td.simulator__table-td 定款印紙代（電子）
+                td.simulator__table-td 0 
+                  span.noto 円
+                td.simulator__table-td
+                  span.js-incstamp-total 0 
+                  span.noto 円
+              tr 
+                td.simulator__table-td 印紙証明書
+                td.simulator__table-td 0 
+                  span.noto 円
+                td.simulator__table-td
+                  span.js-total-stamp 0
+                  span.noto 円
+              tr 
+                td.simulator__table-td.noborder 登録手数料
+                td.simulator__table-td.noborder
+                  span.js-reg-fee 0
+                  span.noto 円
+                td.simulator__table-td.noborder 
+              tr 
+                td.simulator__table-td.right 小計
+                td.simulator__table-td
+                  span.js-total-discount 0
+                  span.noto 円
+                td.simulator__table-td
+                  span.js-total-amount 0
+                  span.noto 円
+              tr 
+                td.simulator__table-td.noborder 税務顧問特別割引
+                td.simulator__table-td.noborder.red -
+                  span.js-total-discount-2 0
+                  span.noto 円
+                td.simulator__table-td.noborder 
+            .simulator__total-expense 
+              span 合計
+              p
+                span.js-total-amount-2 0
+                span.noto 円
+
+      //- .simulator__total
+      //-   h4 Total Amount
+      //-   h2.simulator__total-text.js-total-expense 0
+      //- .simulator__total
+      //-   h4 Total Discount
+      //-   h2.simulator__total-text -
+      //-     span.js-total-discount 0
+
+      //- .simulator__total
+      //-   h3 Total Expense 
+      //-   h3.simulator__total-text.js-total-amount 0
+              
+
