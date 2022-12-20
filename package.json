@@ -5,7 +5,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d build",
     "watch": "parcel watch ./src/*.pug ./src/js/*.ts ./src/css/main.scss --no-hmr",
     "watch:ts": "tsc -p . --noEmit --watch",
     "build": "parcel build --no-content-hash ./src/*.pug ./src/js/*.ts ./src/css/main.scss ./src/img/* ./src/img/*/*",
