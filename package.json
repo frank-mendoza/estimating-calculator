@@ -8,7 +8,7 @@
     "watch": "parcel watch ./src/*.pug ./src/js/*.ts ./src/css/main.scss --no-hmr",
     "watch:ts": "tsc -p . --noEmit --watch",
     "build": "parcel build --no-content-hash ./src/*.pug ./src/js/*.ts ./src/css/main.scss ./src/img/* ./src/img/*/*",
-    "build:all": "concurrently \"yarn:build\" \"node replace.js\" \"yarn:lint:style\"",
+    "build:all": "concurrently \"yarn:build\" \"node replace.js\" \"yarn:lint:style\" \"gh-pages -d build\"",
     "lint:js": "eslint --ext .ts",
     "lint:style": "stylelint **/*.scss --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
