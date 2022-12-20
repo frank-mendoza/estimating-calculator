@@ -42,6 +42,16 @@
     @content;
   }
 }
+@mixin mx375 {
+  @media screen and (max-width: 376px) {
+    @content;
+  }
+}
+@mixin mx300 {
+  @media screen and (max-width: 300px) {
+    @content;
+  }
+}
 
 @function getsp($val) {
   $result: calc($sp-width / $sp-design-width) * $val;
